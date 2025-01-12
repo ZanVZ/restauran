@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Sushi</title>
+    <link rel="stylesheet" href="restauran.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sakura Sushi</h1>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="menu" class="menu-section">
+            <h2>Makanan</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    `<img src="img/1.jpg" alt="Salmon Roll">
+                    <h3>Salmon sushi </h3>
+                    <p>$8.99</p>
+                    <button onclick="openOrderPopup('salmon sushi')">Order Now</button>
+                </div>
+                <div class="menu-item">
+                    <img src="img/crunchy roll.jpg" alt="Tuna Sushi">
+                    <h3>Crunchy roll</h3>
+                    <p>$9.99</p>
+                    <button onclick="openOrderPopup('crunchy roll')">Order Now</button>
+                </div>
+                <div class="menu-item">
+                    <img src="img/3.jpg" alt="Veggie Roll">
+                    <h3>baked ebi</h3>
+                    <p>$8.44</p>
+                    <button onclick="openOrderPopup('baked ebi')">Order Now</button>
+                </div>
+                <div class="menu-item">
+                    <img src="img/4.jpg" alt="Veggie Roll">
+                    <h3>beef ramen</h3>
+                    <p>$8.55</p>
+                    <button onclick="openOrderPopup('beef ramen')">Order Now</button>
+                </div>
+                <div class="menu-item">
+                    <img src="img/5.jpg" alt="Veggie Roll">
+                    <h3>curry chicken</h3>
+                    <p>$9.66</p>
+                    <button onclick="openOrderPopup('curry chicken')">Order Now</button>
+                </div>
+                <div class="menu-item">
+                    <img src="img/6.jpg" alt="Veggie Roll">
+                    <h3>spicy tuna</h3>
+                    <p>$9.11</p>
+                    <button onclick="openOrderPopup('spicy tuna')">Order Now</button>
+                </div>
+                <div class="menu-item">
+                    <img src="img/7.jpg" alt="Veggie Roll">
+                    <h3>tamago sushi</h3>
+                    <p>$8.88</p>
+                    <button onclick="openOrderPopup('tamago sushi')">Order Now</button>
+                </div>
+                <div class="menu-item">
+                    <img src="img/8.jpg" alt="Veggie Roll">
+                    <h3>spaghetti sauce</h3>
+                    <p>$6.35</p>
+                    <button onclick="openOrderPopup('spaghetti sauce')">Order Now</button>
+                </div>
+            
+            </div>
+            <main>
+                <section id="menu" class="menu-section">
+                    <h2>Minuman</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="img/minum1.jpg" alt="Salmon Roll">
+                            <h3>mint lyche</h3>
+                            <p>$7.1</p>
+                            <button onclick="openOrderPopup('mint lychee')">Order Now</button>
+
+                        </div>
+                        <div class="menu-item">
+                            <img src="img/minum2.jpg" alt="Salmon Roll">
+                            <h3>Lemon Tea</h3>
+                            <p>$7.2</p>
+                            <button onclick="openOrderPopup('lemon tea')">Order Now</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="img/m3.jpg" alt="Salmon Roll">
+                            <h3>blue mojito</h3>
+                            <p>$7.3</p>
+                            <button onclick="openOrderPopup('blue mojito')">Order Now</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="img/m4.jpg" alt="Salmon Roll">
+                            <h3>strawberry</h3>
+                            <p>$7.4</p>
+                            <button onclick="openOrderPopup('strawberry mojito')">Order Now</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="img/m5.jpg" alt="Salmon Roll">
+                            <h3>kiwi mojito</h3>
+                            <p>$7.5</p>
+                            <button onclick="openOrderPopup('kiwi mojito')">Order Now</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="img/sop buah.jpg" alt="Salmon Roll">
+                            <h3>es Teler</h3>
+                            <p>$7.6</p>
+                            <button onclick="openOrderPopup('es teler')">Order Now</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="img/jeruk.jpg" alt="Salmon Roll">
+                            <h3>jus jeruk</h3>
+                            <p>$7.7</p>
+                            <button onclick="openOrderPopup('jus Jeruk')">Order Now</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="img/es teler.jpg" alt="salmon Roll">
+                            <h3>sop buah</h3>
+                            <p>$7.8</p>
+                            <button onclick="openOrderPopup('Sop buah')">Sop buah</button>
+                        </div>
+                        <!-- Modal -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Silahkan Pesan</h2>
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="orderForm">
+                <p id="dishName"></p>
+                <label for="quantity">Masukkan Jumlah:</label>
+                <input type="number" id="quantity" min="1" value="1" required>
+                <br><br>
+                <p>Total Price: $<span id="totalPrice">0.00</span></p>
+                <button type="submit" class="btn confirm">Konfirmasi</button>
+                <button type="button" class="btn cancel" onclick="closeOrderModal()">Batal</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+                    
+
+
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Sakura Sushi</h2>
+            <p>Selamat datang di Sakura Sushi, di mana tradisi bertemu inovasi. Koki kami membuat setiap hidangan dengan bahan-bahan segar untuk memberi Anda pengalaman bersantap yang tak terlupakan.</p>
+            <p>Dari roti gulung klasik hingga piring sushi kreatif, menu kami memiliki sesuatu untuk semua orang. Nikmati cita rasa Jepang di setiap gigitan!</p>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>123 Sushi Street, Pekanbaru, NY 12345</p>
+            <p>Email: contact@sakurasushi.com | Phone: (123) 456-7890</p>
+        </section>
+    </main>
+
+    <footer>
+
+        <script src="restauran.js"></script>
+
+</body>
+</html>
